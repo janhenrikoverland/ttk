@@ -1,0 +1,22 @@
+{
+    "projectName": "TTKE1314",
+    "licenseText": "Free",
+    "builds": [
+        {
+            "name": "Application - Production",
+            "target": "libs/app-all.js",
+            "compress": true,
+            "files": [
+                {
+                    "path": "libs/",
+                    "name": "sencha-touch-all.js"
+                },
+                {
+                    "path": "",
+                    "name": "app.js"
+                }
+            ]
+        }
+    ],
+    "resources": []
+}

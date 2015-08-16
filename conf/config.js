@@ -1,0 +1,40 @@
+TTK.config['ttke'] = {
+    season: '1415',
+	players: [
+		{id: 'abo', name: 'Børresen', table: ['ars', 'mac', 'che', 'liv', 'mau', 'eve', 'tot', 'new', 'sou', 'sto', 'sun', 'hul', 'swa', 'qpr', 'cry', 'web', 'lei', 'ast', 'weh', 'bur']},
+    	{id: 'fei', name: 'Einerkjær', table: ['che', 'mac', 'mau', 'ars', 'liv', 'tot', 'eve', 'new', 'weh', 'sto', 'sun', 'sou', 'cry', 'ast', 'web', 'hul', 'lei', 'swa', 'qpr', 'bur']},
+        {id: 'oel', name: 'Ellingsen', table: ['che', 'ars', 'mac', 'liv', 'mau', 'eve', 'tot', 'new', 'sto', 'sou', 'swa', 'hul', 'sun', 'cry', 'qpr', 'web', 'weh', 'ast', 'lei', 'bur']},
+        {id: 'jha', name: 'Harsem', table: ['mac', 'che', 'mau', 'ars', 'liv', 'tot', 'eve', 'sou', 'sun', 'new', 'sto', 'hul', 'swa', 'qpr', 'ast', 'lei', 'web', 'weh', 'bur', 'cry']},
+        {id: 'fhe', name: 'Hesselberg', table: ['che', 'mac', 'mau', 'ars', 'liv', 'eve', 'tot', 'new', 'sto', 'sou', 'weh', 'hul', 'cry', 'ast', 'swa', 'sun', 'web', 'qpr', 'bur', 'lei']},
+		{id: 'kla', name: 'Laskemoen', table: ['che', 'mac', 'ars', 'liv', 'mau', 'tot', 'eve', 'sto', 'sun', 'new', 'qpr', 'sou', 'hul', 'cry', 'ast', 'swa', 'weh', 'web', 'lei', 'bur']},
+        {id: 'ema', name: 'Martinsen', table: ['che', 'ars', 'mau', 'mac', 'liv', 'tot', 'eve', 'new', 'hul', 'sto', 'sou', 'sun', 'cry', 'qpr', 'swa', 'weh', 'ast', 'lei', 'web', 'bur']},
+        {id: 'jov', name: 'Øverland', table: ['che', 'mac', 'ars', 'liv', 'mau', 'tot', 'eve', 'sun', 'sto', 'new', 'sou', 'weh', 'swa', 'hul', 'cry', 'web', 'ast', 'qpr', 'lei', 'bur']}
+	],
+	teams: [
+		{id: 'ars', name: 'Arsenal'},
+		{id: 'ast', name: 'Aston Villa'},
+		{id: 'bur', name: 'Burnley'},
+		{id: 'che', name: 'Chelsea'},
+		{id: 'cry', name: 'Crystal Palace'},
+		{id: 'eve', name: 'Everton'},
+		{id: 'hul', name: 'Hull'},
+		{id: 'lei', name: 'Leicester'},
+		{id: 'liv', name: 'Liverpool'},
+		{id: 'mac', name: 'Manchester City'},
+		{id: 'mau', name: 'Manchester United'},
+		{id: 'new', name: 'Newcastle'},
+		{id: 'qpr', name: 'QPR'},
+		{id: 'sou', name: 'Southampton'},
+		{id: 'sto', name: 'Stoke'},
+		{id: 'sun', name: 'Sunderland'},
+		{id: 'swa', name: 'Swansea'},
+		{id: 'tot', name: 'Tottenham'},
+		{id: 'web', name: 'West Bromwich'},
+		{id: 'weh', name: 'West Ham'}
+	],
+	scoreArray: [-1, 1, 2, 3, 5, 7, 9, 12, 15, 18, 22, 26, 30, 35, 40, 45, 51, 57, 63, 69],
+	teamColors: ['#00a623', '#8cc000', '#bc9b00', '#bc5800', '#A70700', '#ee0000', '#ee0000'],
+	intervalSize: 3,
+	placeColor: ['#00a623', '#4DC000', '#8cc000', '#50321e', '#7E3200', '#bc3c00', '#EE1D00', '#ee0000'],
+    placeFontSize: ['1em', '1em', '1em', '1em', '1em', '1em', '1em', '1em']
+};

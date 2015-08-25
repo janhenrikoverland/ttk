@@ -1,16 +1,42 @@
 Ext.application({
-	name: 'TTKE1314',
+	name: 'TTKE1516',
 	launch: function() {
 		TTK.app = {};
 
         // TTK
-		TTK.app.getTTK = function(name) {
-			var getResultHtml,
+		TTK.app.getTTK = function(compName) {
+			//var ttk,
+                var update,
+                getResultHtml,
 				getIktsHtml,
 				getPlHtml,
 				getTablesHtml,
+                update,
 				initialize;
-				//ttk;
+
+            update = function(r, lastUpdated, ttk) {
+                var updateObject = TTK.update[compName],
+                    teamIds = [],
+                    teams = ttk.util.array.sortObjectArrayByNumber(r.standing, [{
+                        key: 'position',
+                        direction: 'ASC'
+                    }]);
+
+                for (var i = 0; i < teams.length; i++) {
+                    teamIds.push(TTK.config[compName].teamFullNameTeamMap[teams[i].teamName].id);
+                }
+
+                // update standings
+                if (!updateObject.standing.length) {
+                    updateObject.standing = teamIds;
+                }
+
+                // update
+                updateObject.lastUpdated = lastUpdated;
+
+                // update gameweek
+                updateObject.gameWeek = 'Matchday ' + r.matchday;
+            };
 
 			getResultHtml = function() {
 				var html = '',
@@ -81,7 +107,7 @@ Ext.application({
 				for (var i = 0, player; i < players.length; i++) {
 					player = players[i];
 					html += '<tr>';
-					html += '<td class="number">' + (player.plPlace < 9 ? '0': '') + (player.plPlace) + '.</td>';
+					html += '<td class="number">' + (player.plPlace < 10 ? '0': '') + (player.plPlace) + '.</td>';
 					html += '<td class="player" style="color:' + ttk.config.placeColor[player.position - 1] + '">' + player.name + '</td>';
 					html += '<td class="score">' + player.plScore + '</td>';
 
@@ -111,7 +137,7 @@ Ext.application({
 
 					html += '<tr>';
 					html += '<td class="number">' + (i < 9 ? '0': '') + (i + 1) + '.</td>';
-					html += '<td class="team" style="color:' + color + '">' + ttk.config.teamIdTeamNameMap[teamId] + '</td>';
+					html += '<td class="team" style="color:' + color + '">' + ttk.config.teamIdTeamMap[teamId].name + '</td>';
 					html += '<td class="score" style="color:' + color + '">' + score + '</td>';
 					html += '</tr>';
 				}
@@ -131,7 +157,7 @@ Ext.application({
 						color = player.teamColors[j];
 						html += '<tr>';
 						html += '<td class="number">' + (j < 9 ? '0': '') + (j + 1) + '.</td>';
-						html += '<td class="team" style="color:' + color + '">' + ttk.config.teamIdTeamNameMap[table[j]] + '</td>';
+						html += '<td class="team" style="color:' + color + '">' + ttk.config.teamIdTeamMap[table[j]].name + '</td>';
 						html += '<td class="score" style="color:' + color + '">' + (score > -1 ? '+' : '') + score + '</td>';
 						html += '</tr>';
 					}
@@ -153,10 +179,10 @@ Ext.application({
 						html += '<div class="date"><div>' + ttk.update.lastUpdated + '</div><div>' + ttk.update.gameWeek + '</div></div>';
 						html += '</header>';
 						html += '<div id="container">';
-						html += '<div id="result"></div>';
-						html += '<h2>I KNOW THE SCORE</h2>';
-						html += '<div id="ikts"></div>';
-						html += '<h2>TABELL</h2>';
+						//html += '<div id="result"></div>';
+						//html += '<h2>I KNOW THE SCORE</h2>';
+						//html += '<div id="ikts"></div>';
+						//html += '<h2>TABELL</h2>';
 						html += '<div id="pl"></div>';
 						html += '<div id="tables"></div>';
 						html += '</div>';
@@ -169,19 +195,39 @@ Ext.application({
 			};
 
 			initialize = function() {
-				ttk = TTK.core.getInstance();
-				ttk.config = TTK.core.extendConfig(TTK.config[name]);
+                var url = 'http://api.football-data.org/alpha/soccerseasons/398',
+                    destroyCache = new Date();
 
-				TTK.core.applyUpdate(ttk, TTK.update[name]);
+                $.ajax({
+                    headers: {'X-Auth-Token': '5ef9c7278ad8455ca8917237ef6fa859'},
+                    url: url + '?dc?=' + destroyCache.toISOString(),
+                    dataType: 'json',
+                    type: 'GET',
+                }).done(function(r1) {
+                    $.ajax({
+                        headers: {'X-Auth-Token': '5ef9c7278ad8455ca8917237ef6fa859'},
+                        url: url + '/leagueTable' + '?dc=' + destroyCache.toISOString(),
+                        dataType: 'json',
+                        type: 'GET',
+                    }).done(function(r2) {
+                        ttk = TTK.core.getInstance();
 
-				ttk.players = TTK.core.extendPlayers(ttk);
+                        ttk.config = TTK.core.extendConfig(TTK.config[compName]);
 
-				ttk.viewport = getViewport();
+                        update(r2, ttk.util.date.iso2pp(r1.lastUpdated), ttk);
 
-				Ext.get('result').dom.innerHTML = getResultHtml();
-				Ext.get('ikts').dom.innerHTML = getIktsHtml();
-				Ext.get('pl').dom.innerHTML = getPlHtml();
-				Ext.get('tables').dom.innerHTML = getTablesHtml();
+                        TTK.core.applyUpdate(ttk, TTK.update[compName]);
+
+                        ttk.players = TTK.core.extendPlayers(ttk);
+
+                        ttk.viewport = getViewport();
+
+                        //Ext.get('result').dom.innerHTML = getResultHtml();
+                        //Ext.get('ikts').dom.innerHTML = getIktsHtml();
+                        Ext.get('pl').dom.innerHTML = getPlHtml();
+                        Ext.get('tables').dom.innerHTML = getTablesHtml();
+                    });
+                });
 			}();
 		};
 

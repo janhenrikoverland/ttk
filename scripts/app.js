@@ -5,8 +5,8 @@ Ext.application({
 
         // TTK
 		TTK.app.getTTK = function(compName) {
-			//var ttk,
-                var update,
+			var ttk,
+                update,
                 getResultHtml,
 				getIktsHtml,
 				getPlHtml,
@@ -35,7 +35,7 @@ Ext.application({
                 updateObject.lastUpdated = lastUpdated;
 
                 // update gameweek
-                updateObject.gameWeek = 'Matchday ' + r.matchday;
+                updateObject.gameWeek = 'Serierunde ' + r.matchday;
             };
 
 			getResultHtml = function() {
@@ -178,6 +178,7 @@ Ext.application({
 						html += '<span class="year">' + ttk.config.season + '</span>';
 						html += '<div class="date"><div>' + ttk.update.lastUpdated + '</div><div>' + ttk.update.gameWeek + '</div></div>';
 						html += '</header>';
+                        html += '<div id="header-shadow"></div>';
 						html += '<div id="container">';
 						//html += '<div id="result"></div>';
 						//html += '<h2>I KNOW THE SCORE</h2>';
@@ -196,17 +197,17 @@ Ext.application({
 
 			initialize = function() {
                 var url = 'http://api.football-data.org/alpha/soccerseasons/398',
-                    destroyCache = new Date();
+                    destroyCache = (new Date()).getTime();
 
                 $.ajax({
                     headers: {'X-Auth-Token': '5ef9c7278ad8455ca8917237ef6fa859'},
-                    url: url + '?dc?=' + destroyCache.toISOString(),
+                    url: url + '?dc=' + destroyCache,
                     dataType: 'json',
                     type: 'GET',
                 }).done(function(r1) {
                     $.ajax({
                         headers: {'X-Auth-Token': '5ef9c7278ad8455ca8917237ef6fa859'},
-                        url: url + '/leagueTable' + '?dc=' + destroyCache.toISOString(),
+                        url: url + '/leagueTable' + '?dc=' + destroyCache,
                         dataType: 'json',
                         type: 'GET',
                     }).done(function(r2) {

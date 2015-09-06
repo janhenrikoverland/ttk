@@ -10,7 +10,7 @@ TTK.config['ttke'] = {
         {id: 'kla', name: 'Laskemoen', table: 'che|ars|mun|mci|liv|tot|stk|eve|whu|sou|cry|new|swa|wat|wba|bou|avl|sun|lei|nor'.split('|')},
         {id: 'ema', name: 'Martinsen', table: 'che|ars|mci|mun|liv|tot|eve|stk|sou|whu|cry|new|swa|wba|avl|wat|sun|lei|nor|bou'.split('|')},
         {id: 'mro', name: 'Røsjø', table: 'mun|che|ars|mci|tot|liv|eve|stk|sou|whu|new|cry|avl|swa|wba|lei|sun|bou|nor|wat'.split('|')},
-        {id: 'ask', name: 'Skogvang', table: 'mun|che|ars|mci|liv|tot|sou|eve|stk|swa|cry|whu|wba|new|avl|nor|lei|sun|wat|bou'.split('|')},
+        {id: 'ask', name: 'Skogvang', table: 'che|mun|ars|mci|eve|liv|tot|stk|new|sou|cry|whu|swa|avl|lei|wba|bou|sun|wat|nor'.split('|')},
         {id: 'lwa', name: 'Wabakken', table: 'ars|che|mci|mun|liv|tot|eve|sou|stk|whu|swa|cry|new|wba|avl|sun|lei|wat|bou|nor'.split('|')},
         {id: 'kwi', name: 'Wilsgård', table: 'che|mci|mun|ars|liv|tot|sou|eve|avl|swa|whu|stk|new|sun|wba|cry|nor|lei|bou|wat'.split('|')},
         {id: 'jov', name: 'Øverland', table: 'che|mci|ars|mun|liv|tot|sou|eve|swa|stk|cry|whu|new|sun|wba|wat|avl|lei|bou|nor'.split('|')}

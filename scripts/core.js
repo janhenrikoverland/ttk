@@ -78,7 +78,8 @@ TTK.core.getInstance = function() {
             getPfxd = function(param) {
                 return parseInt(param) < 10 ? '0' + param : param;
             },
-            time = getPfxd(date.getHours()) + ':' + getPfxd(date.getMinutes());
+            time = getPfxd(date.getHours()) + ':' + getPfxd(date.getMinutes()),
+            monthNames = 'Jan|Feb|Mars|Apr|Mai|Juni|Juli|Aug|Sep|Okt|Nov|Des'.split('|');
 
         if (dateFY === nowFY && dateM === nowM && nowD === dateD) {
             return 'I dag, ' + time;
@@ -87,7 +88,7 @@ TTK.core.getInstance = function() {
             return 'I går, ' + time;
         }
 
-    return getPfxd(dateD) + '/' + getPfxd(dateM) + '/' + dateFY + ', ' + time;
+    return getPfxd(dateD) + ' ' + monthNames[dateM] + ' ' + dateFY + ', ' + time;
     };
 
 	return {

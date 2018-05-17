@@ -3,7 +3,9 @@ import './App.css';
 
 class App extends Component {
     render() {
-        return <div className="App">TTK</div>;
+        const a = new Array(200).fill('');
+
+        return <div className="App">{a.map((item, i) => <div key={i}>row {i}</div>)}</div>;
     }
 }
 

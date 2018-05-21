@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import './App.css';
+import { getLeagueTable, getCompetition } from '../../api';
+import config from '../../config/en1718';
 
 const Position = styled.td``;
 
@@ -17,10 +18,37 @@ const Diff = styled.td`
     padding-left: 30px;
 `;
 
+const Loading = styled.div`
+    width: 100vw;
+    text-align: center;
+    margin: 20px auto;
+    color: #555;
+`;
+
 class App extends Component {
+    state = {
+        config: null,
+    };
+
+    async componentDidMount() {
+        const competition = await (await getCompetition()).json();
+        const leagueTable = await (await getLeagueTable()).json();
+
+        console.log(competition);
+        console.log(leagueTable);
+
+        this.setState({
+            config: true,
+        });
+    }
+
     render() {
         const a = new Array(99).fill('');
         let index;
+
+        if (!this.state.config) {
+            return <Loading>Henter data fra api.football-data.org..</Loading>;
+        }
 
         return (
             <div className="App">

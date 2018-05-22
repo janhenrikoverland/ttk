@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { getData } from '../../adapters/football-data-org';
-import TeamTableList from '../TeamTable/TeamTableList';
+import UserTableList from '../UserTable/UserTableList';
 
 const Loading = styled.div`
     width: 100vw;
@@ -35,7 +35,7 @@ class App extends Component {
             <div className="App">
                 <HeaderBar lastUpdated={this.state.lastUpdated} gameweek={this.state.gameweek} />
                 <UserTable />
-                <TeamTableList config={this.props.config} standing={this.state.standing} />
+                <UserTableList config={this.props.config} standing={this.state.standing} />
             </div>
         );
     }

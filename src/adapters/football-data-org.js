@@ -1,6 +1,6 @@
 import { formatDate } from '../utils/date';
 import teams from '../config/teams';
-import { getCompetition, getLeagueTable } from '../api/football-data-org';
+//import { getCompetition, getLeagueTable } from '../api/football-data-org';
 import C from '../data/competition';
 import L from '../data/leagueTable';
 

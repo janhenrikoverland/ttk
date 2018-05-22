@@ -1,6 +1,6 @@
 export const ARS = {
     id: 'ARS',
-    displayName: 'Arsenal',
+    name: 'Arsenal',
 };
 
 export const BOU = {

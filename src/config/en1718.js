@@ -24,7 +24,6 @@ import {
     WHU,
 } from './teams';
 import { TEAM_COLORS, USER_COLORS } from './colors';
-import { TEAM_POINTS } from './points';
 
 // Name
 const name = 'TTKE';

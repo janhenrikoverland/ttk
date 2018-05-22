@@ -4,6 +4,7 @@
     "private": true,
     "homepage": ".",
     "dependencies": {
+        "d2-utilizr": "^0.2.16",
         "react": "^16.3.2",
         "react-dom": "^16.3.2",
         "react-scripts": "1.1.4",

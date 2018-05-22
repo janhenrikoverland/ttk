@@ -1,71 +1,71 @@
 export const PAM = {
     id: 'PAM',
-    displayName: 'Amland',
+    name: 'Amland',
 };
 
 export const ABO = {
     id: 'ABO',
-    displayName: 'Børresen',
+    name: 'Børresen',
 };
 
 export const FEI = {
     id: 'FEI',
-    displayName: 'Einerkjær',
+    name: 'Einerkjær',
 };
 
 export const OEL = {
     id: 'OEL',
-    displayName: 'Ellingsen',
+    name: 'Ellingsen',
 };
 
 export const LPA = {
     id: 'LPA',
-    displayName: 'Fauske-Palmér',
+    name: 'Fauske-Palmér',
 };
 
 export const JHA = {
     id: 'JHA',
-    displayName: 'Harsem',
+    name: 'Harsem',
 };
 
 export const FHE = {
     id: 'FHE',
-    displayName: 'Hesselberg',
+    name: 'Hesselberg',
 };
 
 export const KLA = {
     id: 'KLA',
-    displayName: 'Laskemoen',
+    name: 'Laskemoen',
 };
 
 export const EMA = {
     id: 'EMA',
-    displayName: 'Martinsen',
+    name: 'Martinsen',
 };
 
 export const MRO = {
     id: 'MRO',
-    displayName: 'Røsjø',
+    name: 'Røsjø',
 };
 
 export const ASK = {
     id: 'ASK',
-    displayName: 'Skogvang',
+    name: 'Skogvang',
 };
 
 export const LWA = {
     id: 'LWA',
-    displayName: 'Wabakken',
+    name: 'Wabakken',
 };
 
 export const KWI = {
     id: 'KWI',
-    displayName: 'Wilsgård',
+    name: 'Wilsgård',
 };
 
 export const JOV = {
     id: 'JOV',
-    displayName: 'Øverland',
+    name: 'Øverland',
 };
 
 export default {

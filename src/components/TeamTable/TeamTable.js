@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const TableHeader = styled.tr`
+    border-bottom: 1px solid #ddd;
+`;
+
 const Position = styled.td``;
 
 const Team = styled.td`
@@ -22,11 +26,12 @@ const Row = ({ row }) => (
 
 const TeamTable = ({ rows }) => (
     <table>
-        <tbody>{rows.map((row, i) => <Row key={i} row={row} />)}</tbody>
+        <tbody>
+            <{rows.map((row, i) => <Row key={i} row={row} />)}</tbody>
     </table>
 );
 
-export default props => {
+export default ({ rows, teamColorMap }) => {
     const rows = [
         { position: '01', team: 'Manchester City', points: -1 },
         { position: '02', team: 'Liverpool', points: 1 },

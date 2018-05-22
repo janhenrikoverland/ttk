@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { getData } from '../../adapters/football-data-org';
+import TeamTableList from '../TeamTable/TeamTableList';
 
 const Loading = styled.div`
     width: 100vw;
@@ -11,7 +12,6 @@ const Loading = styled.div`
 
 const HeaderBar = () => '';
 const UserTable = () => '';
-const TeamTableList = () => '';
 
 class App extends Component {
     state = null;

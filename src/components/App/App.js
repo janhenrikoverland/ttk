@@ -1,22 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { getLeagueTable, getCompetition } from '../../api';
-import config from '../../config/en1718';
-
-const Position = styled.td``;
-
-const User = styled.td`
-    padding-left: 10px;
-    width: 200px;
-`;
-
-const Points = styled.td`
-    font-weight: 400;
-`;
-
-const Diff = styled.td`
-    padding-left: 30px;
-`;
+import { getData } from '../../adapters/football-data-org';
 
 const Loading = styled.div`
     width: 100vw;
@@ -25,50 +9,33 @@ const Loading = styled.div`
     color: #555;
 `;
 
+const HeaderBar = () => '';
+const UserTable = () => '';
+const TeamTableList = () => '';
+
 class App extends Component {
-    state = {
-        config: null,
-    };
+    state = null;
 
     async componentDidMount() {
-        const competition = await (await getCompetition()).json();
-        const leagueTable = await (await getLeagueTable()).json();
-
-        console.log(competition);
-        console.log(leagueTable);
+        const { lastUpdated, gameweek, standing } = await getData();
 
         this.setState({
-            config: true,
+            lastUpdated,
+            gameweek,
+            standing,
         });
     }
 
     render() {
-        const a = new Array(99).fill('');
-        let index;
-
-        if (!this.state.config) {
+        if (!this.state) {
             return <Loading>Henter data fra api.football-data.org..</Loading>;
         }
 
         return (
             <div className="App">
-                <table>
-                    <tbody>
-                        {a.map((item, i) => {
-                            index = i + 1;
-                            return (
-                                <tr key={index}>
-                                    <Position>{`${
-                                        ('' + index).length === 1 ? '0' : ''
-                                    }${index}.`}</Position>
-                                    <User>Jan Henrik Øverland</User>
-                                    <Points>180</Points>
-                                    <Diff>+100</Diff>
-                                </tr>
-                            );
-                        })}
-                    </tbody>
-                </table>
+                <HeaderBar lastUpdated={this.state.lastUpdated} gameweek={this.state.gameweek} />
+                <UserTable />
+                <TeamTableList config={this.props.config} standing={this.state.standing} />
             </div>
         );
     }

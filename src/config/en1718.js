@@ -22,11 +22,12 @@ import {
     WBA,
     WHU,
 } from './teams';
+import { TEAM_COLORS, USER_COLORS } from './colors';
 
 export default {
     name: 'TTKE',
     season: '1718',
-    data: [
+    bets: [
         {
             user: PAM,
             table: [
@@ -328,4 +329,24 @@ export default {
             ],
         },
     ],
+    user: {
+        colors: [
+            USER_COLORS.WINNER_FIRST,
+            USER_COLORS.WINNER_SECOND,
+            USER_COLORS.WINNER_THIRD,
+            USER_COLORS.LOSER_FIRST,
+            USER_COLORS.LOSER_ALT6,
+            USER_COLORS.LOSER_ALT8,
+            USER_COLORS.LOSER_ALT10,
+            USER_COLORS.LOSER_ALT12,
+            USER_COLORS.LOSER_ALT14,
+            USER_COLORS.LOSER_ALT16,
+            USER_COLORS.LOSER_ALT18,
+            USER_COLORS.LOSER_LAST,
+        ],
+    },
+    team: {
+        colors: Object.values(TEAM_COLORS),
+        interval: 3,
+    },
 };

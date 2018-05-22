@@ -28,5 +28,3 @@ export const TEAM_COLORS = {
     BAD: '#A70700',
     HORRIBLE: '#FF0000',
 };
-
-export const TEAM_COLOR_INTERVAL = 3;

@@ -1,3 +1,8 @@
+Array.prototype.sortObjects = (key = 'name', direction = 'asc') => {
+    const a = [...this];
+    a.sort((a, b) => (direction.toLowerCase() === 'desc' ? b[key] - a[key] : a[key] - b[key]));
+};
+
 // dep level 1
 
 export const getNewArray = length => new Array(length).fill(undefined);

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { getData } from '../../adapters/football-data-org';
+import HeaderBar from '../HeaderBar/HeaderBar';
 import UserTableList from '../UserTable/UserTableList';
 
 const Loading = styled.div`
@@ -10,7 +11,6 @@ const Loading = styled.div`
     color: #555;
 `;
 
-const HeaderBar = () => '';
 const UserTable = () => '';
 
 class App extends Component {
@@ -31,11 +31,20 @@ class App extends Component {
             return <Loading>Henter data fra api.football-data.org..</Loading>;
         }
 
+        const { config } = this.props;
+        const { name, season } = config;
+        const { lastUpdated, gameweek, standing } = this.state;
+
         return (
             <div className="App">
-                <HeaderBar lastUpdated={this.state.lastUpdated} gameweek={this.state.gameweek} />
+                <HeaderBar
+                    name={name}
+                    season={season}
+                    lastUpdated={lastUpdated}
+                    gameweek={gameweek}
+                />
                 <UserTable />
-                <UserTableList config={this.props.config} standing={this.state.standing} />
+                <UserTableList config={config} standing={standing} />
             </div>
         );
     }

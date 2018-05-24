@@ -1,39 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
 import { numberPadZero, numberPadOperator } from '../../utils/number';
-
-const TableWrapper = styled.div`
-    margin-top: 20px;
-`;
-
-const TableHeader = styled.td`
-    padding-bottom: 3px;
-    border-bottom: 1px solid #ddd;
-    font-weight: 400;
-`;
-
-const User = styled.span`
-    padding-left: 13px;
-`;
-
-const EmptyTd = styled.td`
-    padding: 2px;
-`;
-
-const Position = styled.td``;
-
-const getTeamWithColor = color => styled.td`
-    padding-left: 10px;
-    width: 200px;
-    color: ${color};
-`;
-
-const getPointsWithColor = color => styled.td`
-    font-weight: 400;
-    width: 40px;
-    text-align: right;
-    color: ${color};
-`;
+import {
+    TableWrapper,
+    TableHeader,
+    User,
+    EmptyTd,
+    getTeamWithColor,
+    getPointsWithColor,
+    Position,
+} from './UserTable.styled';
 
 const Row = ({ row, position }) => {
     const Team = getTeamWithColor(row.legend.color);

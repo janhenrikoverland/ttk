@@ -12,20 +12,32 @@ const App = ({ config, lastUpdated, gameWeek, standing }) => {
 
     return (
         <AppStyled>
-            <HeaderBar name={name} season={season} lastUpdated={lastUpdated} gameWeek={gameWeek} />
+            <HeaderBar
+                {...{
+                    name,
+                    season,
+                    lastUpdated,
+                    gameWeek,
+                }}
+            />
             <ContentWrapper>
                 <Result />
-                <BetList config={config} standing={standing} />
+                <BetList
+                    {...{
+                        config,
+                        standing,
+                    }}
+                />
             </ContentWrapper>
         </AppStyled>
     );
 };
 
 App.propTypes = {
-    config: propTypes.object,
-    lastUpdated: propTypes.string,
-    gameWeek: propTypes.number,
-    standing: propTypes.arrayOf(propTypes.object),
+    config: propTypes.object.isRequired,
+    lastUpdated: propTypes.string.isRequired,
+    gameWeek: propTypes.number.isRequired,
+    standing: propTypes.arrayOf(propTypes.object).isRequired,
 };
 
 class AppCt extends Component {

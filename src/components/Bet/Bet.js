@@ -1,43 +1,43 @@
 import React from 'react';
 import { numberPadZero, numberPadOperator } from '../../utils/number';
 import {
-    TableWrapper,
-    TableHeader,
-    User,
-    EmptyTd,
-    getTeamWithColor,
-    getPointsWithColor,
-    Position,
+    SCTable,
+    SCTableHeader,
+    SCUser,
+    SCEmptyTd,
+    SCPosition,
+    getSCTeam,
+    getSCPoints,
 } from './Bet.style';
 
 const Row = ({ row, position }) => {
-    const Team = getTeamWithColor(row.legend.color);
-    const Points = getPointsWithColor(row.legend.color);
+    const SCTeam = getSCTeam(row.legend.color);
+    const SCPoints = getSCPoints(row.legend.color);
 
     return (
         <tr>
-            <Position>{`${numberPadZero(position)}.`}</Position>
-            <Team>{row.team.name}</Team>
-            <Points>{numberPadOperator(row.legend.points)}</Points>
+            <SCPosition>{`${numberPadZero(position)}.`}</SCPosition>
+            <SCTeam>{row.team.name}</SCTeam>
+            <SCPoints>{numberPadOperator(row.legend.points)}</SCPoints>
         </tr>
     );
 };
 
 export default ({ user, position, points, table }) => (
-    <TableWrapper>
+    <SCTable>
         <table>
             <tbody>
                 <tr>
-                    <TableHeader colSpan="3">
+                    <SCTableHeader colSpan="3">
                         {`${numberPadZero(position)}.`}
-                        <User>{`${user.name} (${points})`}</User>
-                    </TableHeader>
+                        <SCUser>{`${user.name} (${points})`}</SCUser>
+                    </SCTableHeader>
                 </tr>
                 <tr>
-                    <EmptyTd colSpan="3" />
+                    <SCEmptyTd colSpan="3" />
                 </tr>
                 {table.map((row, i) => <Row key={i} row={row} position={i + 1} />)}
             </tbody>
         </table>
-    </TableWrapper>
+    </SCTable>
 );

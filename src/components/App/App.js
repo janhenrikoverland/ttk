@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import { getData } from '../../adapters/football-data-org';
 import HeaderBar from '../HeaderBar/HeaderBar';
 import BetList from '../Bet/BetList';
-import { AppStyled, ContentWrapper, Loading } from './App.style';
+import { SCApp, SCContent, SCLoading } from './App.style';
 
 const Result = () => '';
 
@@ -11,7 +11,7 @@ const App = ({ config, lastUpdated, gameWeek, standing }) => {
     const { name, season } = config;
 
     return (
-        <AppStyled>
+        <SCApp>
             <HeaderBar
                 {...{
                     name,
@@ -20,7 +20,7 @@ const App = ({ config, lastUpdated, gameWeek, standing }) => {
                     gameWeek,
                 }}
             />
-            <ContentWrapper>
+            <SCContent>
                 <Result />
                 <BetList
                     {...{
@@ -28,8 +28,8 @@ const App = ({ config, lastUpdated, gameWeek, standing }) => {
                         standing,
                     }}
                 />
-            </ContentWrapper>
-        </AppStyled>
+            </SCContent>
+        </SCApp>
     );
 };
 
@@ -55,7 +55,7 @@ class AppCt extends Component {
 
     render() {
         if (!this.state) {
-            return <Loading>Henter data fra api.football-data.org..</Loading>;
+            return <SCLoading>Henter data fra api.football-data.org..</SCLoading>;
         }
 
         const { config } = this.props;

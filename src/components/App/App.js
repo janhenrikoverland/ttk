@@ -1,20 +1,42 @@
 import React, { Component } from 'react';
+import propTypes from 'prop-types';
 import { getData } from '../../adapters/football-data-org';
 import HeaderBar from '../HeaderBar/HeaderBar';
-import UserTableList from '../UserTable/UserTableList';
-import { AppStyled, ContentWrapper, Loading } from './App.styled';
+import BetList from '../Bet/BetList';
+import { AppStyled, ContentWrapper, Loading } from './App.style';
 
-const UserTable = () => '';
+const Result = () => '';
 
-class App extends Component {
+const App = ({ config, lastUpdated, gameWeek, standing }) => {
+    const { name, season } = config;
+
+    return (
+        <AppStyled>
+            <HeaderBar name={name} season={season} lastUpdated={lastUpdated} gameWeek={gameWeek} />
+            <ContentWrapper>
+                <Result />
+                <BetList config={config} standing={standing} />
+            </ContentWrapper>
+        </AppStyled>
+    );
+};
+
+App.propTypes = {
+    config: propTypes.object,
+    lastUpdated: propTypes.string,
+    gameWeek: propTypes.number,
+    standing: propTypes.arrayOf(propTypes.object),
+};
+
+class AppCt extends Component {
     state = null;
 
     async componentDidMount() {
-        const { lastUpdated, gameweek, standing } = await getData();
+        const { lastUpdated, gameWeek, standing } = await getData();
 
         this.setState({
             lastUpdated,
-            gameweek,
+            gameWeek,
             standing,
         });
     }
@@ -25,24 +47,19 @@ class App extends Component {
         }
 
         const { config } = this.props;
-        const { name, season } = config;
-        const { lastUpdated, gameweek, standing } = this.state;
+        const { lastUpdated, gameWeek, standing } = this.state;
 
         return (
-            <AppStyled>
-                <HeaderBar
-                    name={name}
-                    season={season}
-                    lastUpdated={lastUpdated}
-                    gameweek={gameweek}
-                />
-                <ContentWrapper>
-                    <UserTable />
-                    <UserTableList config={config} standing={standing} />
-                </ContentWrapper>
-            </AppStyled>
+            <App
+                {...{
+                    config,
+                    lastUpdated,
+                    gameWeek,
+                    standing,
+                }}
+            />
         );
     }
 }
 
-export default App;
+export default AppCt;

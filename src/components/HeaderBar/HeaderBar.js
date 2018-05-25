@@ -1,7 +1,7 @@
 import React from 'react';
-import { HeaderWrapper, Header, Name, Season, DateWrapper, Date, Shadow } from './HeaderBar.styled';
+import { HeaderWrapper, Header, Name, Season, DateWrapper, Date, Shadow } from './HeaderBar.style';
 
-export default ({ name, season, lastUpdated, gameweek }) => (
+export default ({ name, season, lastUpdated, gameWeek }) => (
     <div>
         <HeaderWrapper>
             <Header>
@@ -9,7 +9,7 @@ export default ({ name, season, lastUpdated, gameweek }) => (
                 <Season>{season}</Season>
                 <DateWrapper>
                     <Date>{lastUpdated}</Date>
-                    <Date>Serierunde {gameweek}</Date>
+                    <Date>Serierunde {gameWeek}</Date>
                 </DateWrapper>
             </Header>
         </HeaderWrapper>

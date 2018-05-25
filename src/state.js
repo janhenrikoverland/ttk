@@ -1,8 +1,7 @@
-const state = {
-    lastUpdated: '18 Mai 2018, 20:51',
-    gameweek: 38,
-    scores: [
-        { user: OEL, table: [], pointsMap: { ARS: 5 } },
-        { user: JHA, table: [], pointsMap: { TOT: -1 } },
-    ],
-};
+// user {id,name}
+// userColor string
+
+// team {id,name}
+// teamLegend {diffIndex|points,color}
+
+// bet [{user,table[team]}]

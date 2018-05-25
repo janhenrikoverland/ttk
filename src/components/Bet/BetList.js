@@ -1,6 +1,6 @@
 import React from 'react';
-import './UserTable';
-import UserTable from './UserTable';
+import './Bet';
+import Bet from './Bet';
 import { numberDifference } from '../../utils/number';
 
 const getStandingById = standing =>
@@ -84,11 +84,11 @@ const getSortedResults = results => {
     return results.sort(sortFn);
 };
 
-const UserTableList = ({ config, standing }) => {
+const BetList = ({ config, standing }) => {
     const results = getSortedResults(getResults(config, standing));
 
     return results.map((result, i) => (
-        <UserTable
+        <Bet
             key={i}
             user={result.user}
             position={i + 1}
@@ -98,4 +98,4 @@ const UserTableList = ({ config, standing }) => {
     ));
 };
 
-export default UserTableList;
+export default BetList;

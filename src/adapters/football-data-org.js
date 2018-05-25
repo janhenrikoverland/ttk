@@ -38,7 +38,7 @@ export const getData = async () => {
 
     return {
         lastUpdated: formatDate(competition.lastUpdated),
-        gameweek: leagueTable.matchday,
+        gameWeek: leagueTable.matchday,
         standing: getStanding(leagueTable.standing),
     };
 };

@@ -8,7 +8,7 @@ import {
     getTeamWithColor,
     getPointsWithColor,
     Position,
-} from './UserTable.styled';
+} from './Bet.style';
 
 const Row = ({ row, position }) => {
     const Team = getTeamWithColor(row.legend.color);

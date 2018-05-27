@@ -4,10 +4,11 @@ import { getData } from '../../adapters/football-data-org';
 import HeaderBar from '../HeaderBar/HeaderBar';
 import BetList from '../Bet/BetList';
 import { SCApp, SCContent, SCLoading } from './App.style';
+import { getSortedResults, getResults } from '../../utils/ttk';
 
 const Result = () => '';
 
-const App = ({ config, lastUpdated, gameWeek, standing }) => {
+const App = ({ config, lastUpdated, gameWeek, standing, results }) => {
     const { name, season } = config;
 
     return (
@@ -21,13 +22,8 @@ const App = ({ config, lastUpdated, gameWeek, standing }) => {
                 }}
             />
             <SCContent className="SCContent">
-                <Result className="SCResult" />
-                <BetList
-                    {...{
-                        config,
-                        standing,
-                    }}
-                />
+                <Result className="SCResult" results={results} />
+                <BetList results={results} />
             </SCContent>
         </SCApp>
     );
@@ -45,11 +41,15 @@ class AppCt extends Component {
 
     async componentDidMount() {
         const { lastUpdated, gameWeek, standing } = await getData();
+        const { config } = this.props;
+
+        const results = getSortedResults(getResults(config, standing));
 
         this.setState({
             lastUpdated,
             gameWeek,
             standing,
+            results,
         });
     }
 
@@ -59,7 +59,7 @@ class AppCt extends Component {
         }
 
         const { config } = this.props;
-        const { lastUpdated, gameWeek, standing } = this.state;
+        const { lastUpdated, gameWeek, standing, results } = this.state;
 
         return (
             <App
@@ -68,6 +68,7 @@ class AppCt extends Component {
                     lastUpdated,
                     gameWeek,
                     standing,
+                    results,
                 }}
             />
         );

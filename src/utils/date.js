@@ -20,10 +20,11 @@ export const formatDate = str => {
 
     const [date, time] = str.split('T');
 
+    // eslint-disable-next-line
     const [year, month, day] = date.split('-');
     const [hours, minutes] = time.split(':');
 
-    const monthName = MONTHS[parseInt(month, 10)];
+    const monthName = MONTHS[parseInt(month, 10)].toLowerCase();
 
-    return `${day} ${monthName} ${year}, ${hours}:${minutes}`;
+    return `${day}.${monthName}, ${hours}:${minutes}`;
 };

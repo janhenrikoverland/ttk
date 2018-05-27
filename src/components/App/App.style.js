@@ -1,10 +1,16 @@
 import styled from 'styled-components';
 
 export const SCApp = styled.div`
-    font-family: Helvetica Neue, Hevetica, Roboto, sans-serif;
+    font-family: Roboto, sans-serif;
     font-weight: 300;
-    font-size: 19px;
+    font-size: 17px;
 `;
+
+// export const SCApp = styled.div`
+//     font-family: Helvetica Neue, Hevetica, Roboto, sans-serif;
+//     font-weight: 300;
+//     font-size: 19px;
+// `;
 
 export const SCContent = styled.div`
     padding: 0 20px 20px;

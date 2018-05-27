@@ -2,12 +2,15 @@ import styled from 'styled-components';
 
 export const SCTable = styled.div`
     margin-top: 20px;
+    font-size: 15px;
 `;
 
 export const SCTableHeader = styled.td`
     padding-bottom: 3px;
     border-bottom: 1px solid #ddd;
-    font-weight: 400;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #333;
 `;
 
 export const SCUser = styled.span`
@@ -21,14 +24,15 @@ export const SCEmptyTd = styled.td`
 export const SCPosition = styled.td``;
 
 export const getSCTeam = color => styled.td`
-    padding-left: 10px;
     width: 200px;
+    padding-left: 10px;
+    font-weight: 400;
     color: ${color};
 `;
 
 export const getSCPoints = color => styled.td`
-    font-weight: 400;
     width: 40px;
     text-align: right;
+    font-weight: 400;
     color: ${color};
 `;

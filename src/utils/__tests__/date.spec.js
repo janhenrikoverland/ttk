@@ -11,7 +11,7 @@ describe('utils/date', () => {
 
         it('should pp date from date string', () => {
             const actualState = formatDate('2018-05-18T17:22:08Z');
-            const expectedState = '18 Mai 2018, 17:22';
+            const expectedState = '18.mai, 17:22';
 
             expect(actualState).toEqual(expectedState);
         });

@@ -1,5 +1,3 @@
-import arrayDifference from 'd2-utilizr/lib/arrayDifference';
-
 import { PAM, ABO, FEI, OEL, LPA, JHA, FHE, KLA, EMA, LWA, KWI, JOV } from './users';
 import {
     ARS,
@@ -415,59 +413,3 @@ export default {
     },
     bets: bets,
 };
-
-// Tests
-
-// Name
-if (!(name && typeof name === 'string')) {
-    console.error('Name:', name);
-}
-
-// Season
-if (!(season && typeof season === 'string')) {
-    console.error('Season:', season);
-}
-
-// Users
-if (!(Array.isArray(users) && users.length)) {
-    console.error('Users:', users);
-}
-
-// User colors
-if (!(userColors && Object.values(userColors).length === users.length)) {
-    console.error('User colors:', userColors, users);
-}
-
-// Teams
-if (!(Array.isArray(teams) && teams.length)) {
-    console.error('Teams:', teams);
-}
-
-// Team legend
-if (!(teamLegend && Object.values(teamLegend).length === teams.length)) {
-    console.error('Team legend:', teamLegend, teams);
-}
-
-// Bets
-if (!(Array.isArray(bets) && bets.length)) {
-    console.error('Bets:', bets);
-}
-
-const betUserDiff = arrayDifference(bets.map(bet => bet.user), users);
-const userBetDiff = arrayDifference(users, bets.map(bet => bet.user));
-
-if (betUserDiff.length) {
-    console.error('Bets with undefined user:', betUserDiff);
-}
-
-if (userBetDiff.length) {
-    console.error('Users without bets:', userBetDiff);
-}
-
-bets.forEach(bet => {
-    const diff = arrayDifference(bet.table, teams, true);
-
-    if (diff.length) {
-        console.error('Invalid table:', bet.user.name, diff, teams);
-    }
-});

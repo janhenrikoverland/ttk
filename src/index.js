@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import './css/roboto-fontface.css';
+import './fonts/roboto/roboto-fontface.css';
 import App from './components/App/App';
 import config from './config/en1718';
 

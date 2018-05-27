@@ -11,7 +11,7 @@ const App = ({ config, lastUpdated, gameWeek, standing }) => {
     const { name, season } = config;
 
     return (
-        <SCApp>
+        <SCApp className="SCApp">
             <HeaderBar
                 {...{
                     name,
@@ -20,8 +20,8 @@ const App = ({ config, lastUpdated, gameWeek, standing }) => {
                     gameWeek,
                 }}
             />
-            <SCContent>
-                <Result />
+            <SCContent className="SCContent">
+                <Result className="SCResult" />
                 <BetList
                     {...{
                         config,

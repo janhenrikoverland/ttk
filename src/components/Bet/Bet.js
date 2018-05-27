@@ -24,7 +24,7 @@ const Row = ({ row, position }) => {
 };
 
 export default ({ user, position, points, table }) => (
-    <SCTable>
+    <SCTable className="SCBet">
         <table>
             <tbody>
                 <tr>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import propTypes from 'prop-types';
 import { getData } from '../../adapters/football-data-org';
 import HeaderBar from '../HeaderBar/HeaderBar';
+import Standing from '../Standing/Standing';
 import Result from '../Result/Result';
 import BetList from '../Bet/BetList';
 import { SCApp, SCContent, SCLoading } from './App.style';
@@ -22,7 +23,8 @@ const App = ({ config, lastUpdated, gameWeek, standing, results }) => {
             />
             <SCContent className="SCContent">
                 <Result className="SCResult" results={results} />
-                <BetList results={results} />
+                <Standing className="SCStanding" standing={standing} gameWeek={gameWeek} />
+                <BetList standing={standing} results={results} />
             </SCContent>
         </SCApp>
     );

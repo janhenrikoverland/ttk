@@ -11,6 +11,7 @@ export const SCLink = styled.div`
     color: #1a67ff;
     letter-spacing: -0.3px;
     cursor: pointer;
+    user-select: none;
 `;
 
 export const SCLinkArrow = styled.span`
@@ -21,6 +22,7 @@ export const SCLinkArrow = styled.span`
 `;
 
 export const SCTableHeader = styled.td`
+    padding-top: 30px;
     padding-bottom: 3px;
     border-bottom: 1px solid #ddd;
     font-weight: 500;

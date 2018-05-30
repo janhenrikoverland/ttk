@@ -10,7 +10,7 @@ const Row = ({ position, userName, color, points, diff }) => {
             <SCPosition>{numberPadZero(position)}.</SCPosition>
             <SCUserName>{userName}</SCUserName>
             <SCPoints>{points}</SCPoints>
-            <SCDiff>{numberPadOperator(diff)}</SCDiff>
+            <SCDiff>{diff !== 0 ? numberPadOperator(diff) : ''}</SCDiff>
         </tr>
     );
 };

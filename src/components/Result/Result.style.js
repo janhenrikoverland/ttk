@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SCTable = styled.div`
-    margin-top: 20px;
+    margin-top: 15px;
 `;
 
 export const SCPosition = styled.td``;

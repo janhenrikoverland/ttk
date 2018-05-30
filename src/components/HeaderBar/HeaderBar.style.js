@@ -3,8 +3,10 @@ import styled from 'styled-components';
 export const SCHeaderWrapper = styled.div`
     padding: 0 12px;
     background-color: #fff;
+    font-size: 14px;
     font-weight: 400;
     color: #777;
+    text-transform: uppercase;
 `;
 
 export const SCHeader = styled.header`
@@ -18,6 +20,7 @@ export const SCHeader = styled.header`
 
 export const SCLogo = styled.div`
     flex: 1;
+    font-size: 17px;
     font-weight: 700;
 `;
 

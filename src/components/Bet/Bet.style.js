@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const SCTable = styled.div`
     margin-top: 20px;
-    font-size: 15px;
 `;
 
 export const SCTableHeader = styled.td`
@@ -33,6 +32,6 @@ export const getSCTeam = color => styled.td`
 export const getSCPoints = color => styled.td`
     width: 40px;
     text-align: right;
-    font-weight: 400;
+    font-weight: 500;
     color: ${color};
 `;

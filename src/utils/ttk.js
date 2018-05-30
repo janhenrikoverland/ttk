@@ -1,6 +1,7 @@
 import { numberDifference } from './number';
 
-export const getStandingById = standing =>
+// returns { ARS: { ...team }}
+export const getIdTeamMap = standing =>
     standing.reduce(
         (map, team, index) => ({
             ...map,
@@ -16,7 +17,7 @@ export const getResults = (config, standing) => {
     const bets = config.bets;
     const legend = config.team.legend;
 
-    const standingById = getStandingById(standing);
+    const standingById = getIdTeamMap(standing);
 
     return bets.map(bet => {
         const table = getTableWithPosition(bet.table).map(team => {
@@ -53,7 +54,7 @@ export const getMutualWinner = (user1TableDesc, user2TableDesc) => {
     return 0;
 };
 
-export const getSortedResults = results => {
+export const getSortedResults = (results, userColors) => {
     const sortFn = (result1, result2) => {
         const diff = result1.points - result2.points;
 
@@ -78,5 +79,16 @@ export const getSortedResults = results => {
         return mutualWinner;
     };
 
-    return results.sort(sortFn);
+    const sortedResults = results.slice().sort(sortFn);
+    const winnerPoints = sortedResults[0].points;
+
+    sortedResults.forEach((result, i) => {
+        result.legend = {
+            points: result.points,
+            color: userColors[i + 1],
+            diff: result.points - winnerPoints,
+        };
+    });
+
+    return sortedResults;
 };

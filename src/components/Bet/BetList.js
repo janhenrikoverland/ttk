@@ -1,7 +1,6 @@
 import React from 'react';
 import './Bet';
 import Bet from './Bet';
-import { getSortedResults, getResults } from '../../utils/ttk';
 
 const BetList = ({ results }) =>
     results.map((result, i) => (

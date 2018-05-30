@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import propTypes from 'prop-types';
 import { getData } from '../../adapters/football-data-org';
 import HeaderBar from '../HeaderBar/HeaderBar';
+import Result from '../Result/Result';
 import BetList from '../Bet/BetList';
 import { SCApp, SCContent, SCLoading } from './App.style';
 import { getSortedResults, getResults } from '../../utils/ttk';
-
-const Result = () => '';
 
 const App = ({ config, lastUpdated, gameWeek, standing, results }) => {
     const { name, season } = config;
@@ -43,7 +42,7 @@ class AppCt extends Component {
         const { lastUpdated, gameWeek, standing } = await getData();
         const { config } = this.props;
 
-        const results = getSortedResults(getResults(config, standing));
+        const results = getSortedResults(getResults(config, standing), config.user.colors);
 
         this.setState({
             lastUpdated,

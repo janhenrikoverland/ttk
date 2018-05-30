@@ -1,9 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import {
     SCStandingWrapper,
-    SCStanding,
     SCLink,
-    SCPoints,
     getSCTeamName,
     getSCPoints,
     SCTableHeader,

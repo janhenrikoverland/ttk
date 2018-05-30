@@ -14,8 +14,8 @@ export const SCLink = styled.div`
 `;
 
 export const SCLinkArrow = styled.span`
-    margin-left: 1px;
-    margin-right: 3px;
+    margin-left: 3px;
+    padding-right: 7px;
     font-weight: 300;
     color: #000;
 `;

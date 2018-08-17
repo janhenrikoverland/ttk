@@ -15,27 +15,23 @@ const Row = ({ position, userName, color, points, diff }) => {
     );
 };
 
-const Result = ({ results }) => {
-    console.log('results', results);
-
-    return (
-        <SCTable className="SCBet">
-            <table>
-                <tbody>
-                    {results.map((result, i) => (
-                        <Row
-                            key={i}
-                            position={i + 1}
-                            userName={result.user.name}
-                            color={result.legend.color}
-                            points={result.legend.points}
-                            diff={result.legend.diff}
-                        />
-                    ))}
-                </tbody>
-            </table>
-        </SCTable>
-    );
-};
+const Result = ({ results }) => (
+    <SCTable className="SCBet">
+        <table>
+            <tbody>
+                {results.map((result, i) => (
+                    <Row
+                        key={i}
+                        position={i + 1}
+                        userName={result.user.name}
+                        color={result.legend.color}
+                        points={result.legend.points}
+                        diff={result.legend.diff}
+                    />
+                ))}
+            </tbody>
+        </table>
+    </SCTable>
+);
 
 export default Result;

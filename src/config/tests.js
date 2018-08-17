@@ -36,7 +36,7 @@ export const getConfigTest = config => () => {
     const userBetDiff = arrayDifference(user.users, bets.map(bet => bet.user));
 
     it('no bets with undefined users', expectNoLength(betUserDiff));
-    it('no users withouth bets', expectNoLength(userBetDiff));
+    it('no users without bets', expectNoLength(userBetDiff));
 
     let betTeamDiff;
     let teamBetDiff;
@@ -46,6 +46,6 @@ export const getConfigTest = config => () => {
         teamBetDiff = arrayDifference(team.teams, bet.table);
 
         it('no bets with undefined teams', expectNoLength(betTeamDiff));
-        it('no teams without bets', expectNoLength(betTeamDiff));
+        it('no teams without bets', expectNoLength(teamBetDiff));
     });
 };

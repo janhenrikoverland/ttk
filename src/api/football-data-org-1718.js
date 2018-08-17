@@ -5,10 +5,15 @@ const headers = {
 
 const dc = () => new Date().getTime();
 
-const competitionUrl = 'http://api.football-data.org/v1/competitions/445';
+const competitionUrl = 'http://api.football-data.org/v2/competitions/445';
 
-const leagueTableUrl = 'http://api.football-data.org/v1/competitions/445/leagueTable?matchday=38';
+const leagueTableUrl = 'http://api.football-data.org/v2/competitions/445/leagueTable?matchday=38';
 
 export const getCompetition = async () => fetch(`${competitionUrl}?dc=${dc()}`, { headers });
 
 export const getLeagueTable = async () => fetch(`${leagueTableUrl}&dc=${dc()}`, { headers });
+
+export default {
+    getCompetition,
+    getLeagueTable,
+};

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
-import { getData } from '../../adapters/football-data-org';
 import HeaderBar from '../HeaderBar/HeaderBar';
 import Standing from '../Standing/Standing';
 import Result from '../Result/Result';
@@ -41,8 +40,11 @@ class AppCt extends Component {
     state = null;
 
     async componentDidMount() {
-        const { lastUpdated, gameWeek, standing } = await getData();
         const { config } = this.props;
+        const { api, adapter } = config;
+        const { getData } = adapter;
+
+        const { lastUpdated, gameWeek, standing } = await getData(api);
 
         const results = getSortedResults(getResults(config, standing), config.user.colors);
 

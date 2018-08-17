@@ -63,6 +63,11 @@ export const KWI = {
     name: 'Wilsgård',
 };
 
+export const SOR = {
+    id: 'SOR',
+    name: 'Ørbeck',
+};
+
 export const JOV = {
     id: 'JOV',
     name: 'Øverland',

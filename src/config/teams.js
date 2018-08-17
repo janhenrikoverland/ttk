@@ -18,6 +18,11 @@ export const BRN = {
     name: 'Burnley',
 };
 
+export const CAR = {
+    id: 'CAR',
+    name: 'Cardiff',
+};
+
 export const CHE = {
     id: 'CHE',
     name: 'Chelsea',
@@ -31,6 +36,11 @@ export const CRY = {
 export const EVE = {
     id: 'EVE',
     name: 'Everton',
+};
+
+export const FUL = {
+    id: 'FUL',
+    name: 'Fulham',
 };
 
 export const HUD = {
@@ -98,14 +108,21 @@ export const WHU = {
     name: 'West Ham',
 };
 
+export const WOL = {
+    id: 'WOL',
+    name: 'Wolverhampton',
+};
+
 export default {
     ARS,
     BOU,
     BHA,
     BRN,
+    CAR,
     CHE,
     CRY,
     EVE,
+    FUL,
     HUD,
     LEI,
     LIV,
@@ -119,4 +136,5 @@ export default {
     WAT,
     WBA,
     WHU,
+    WOL,
 };

@@ -1,8 +1,5 @@
 import { formatDate } from '../utils/date';
 import teams from '../config/teams';
-//import { getCompetition, getLeagueTable } from '../api/football-data-org';
-import C from '../data/competition';
-import L from '../data/leagueTable';
 
 const idTeamMap = {
     'Arsenal FC': teams.ARS,
@@ -29,16 +26,21 @@ const idTeamMap = {
 
 const getStanding = standing => standing.map(team => idTeamMap[team.teamName]);
 
-export const getData = async () => {
-    // const competition = await (await getCompetition()).json();
-    // const leagueTable = await (await getLeagueTable()).json();
+export const getData = async api => {
+    const { getCompetition, getLeagueTable } = api;
+    const competition = await (await getCompetition()).json();
+    const leagueTable = await (await getLeagueTable()).json();
 
-    const competition = C;
-    const leagueTable = L;
+    console.log('competition', competition);
+    console.log('leagueTable', leagueTable);
 
     return {
         lastUpdated: formatDate(competition.lastUpdated),
         gameWeek: leagueTable.matchday,
         standing: getStanding(leagueTable.standing),
     };
+};
+
+export default {
+    getData,
 };

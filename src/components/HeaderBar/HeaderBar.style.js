@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SCHeaderWrapper = styled.div`
-    padding: 0 12px;
+    padding: 0 15px 0 12px;
     background-color: #fff;
     font-size: 14px;
     font-weight: 400;
@@ -33,7 +33,6 @@ export const SCSeason = styled.span`
 `;
 
 export const SCGameWeek = styled.div`
-    flex: 1;
     text-align: center;
 `;
 

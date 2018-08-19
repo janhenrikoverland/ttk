@@ -16,7 +16,6 @@ const App = ({ config, lastUpdated, gameWeek, standing, results }) => {
                 {...{
                     name,
                     season,
-                    lastUpdated,
                     gameWeek,
                 }}
             />

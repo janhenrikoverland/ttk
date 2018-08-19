@@ -6,11 +6,10 @@ import {
     SCName,
     SCSeason,
     SCGameWeek,
-    SCLastUpdated,
     SCShadow,
 } from './HeaderBar.style';
 
-export default ({ name, season, lastUpdated, gameWeek }) => (
+export default ({ name, season, gameWeek }) => (
     <Fragment>
         <SCHeaderWrapper className="SCHeaderBar">
             <SCHeader>
@@ -18,8 +17,7 @@ export default ({ name, season, lastUpdated, gameWeek }) => (
                     <SCName>{name}</SCName>
                     <SCSeason>{season}</SCSeason>
                 </SCLogo>
-                <SCGameWeek>Serierunde {gameWeek}</SCGameWeek>
-                <SCLastUpdated>{lastUpdated}</SCLastUpdated>
+                <SCGameWeek>Gameweek {gameWeek}</SCGameWeek>
             </SCHeader>
         </SCHeaderWrapper>
         <SCShadow />

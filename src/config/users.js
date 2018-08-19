@@ -83,7 +83,10 @@ export default {
     FHE,
     KLA,
     EMA,
+    MRO,
+    ASK,
     LWA,
     KWI,
+    SOR,
     JOV,
 };

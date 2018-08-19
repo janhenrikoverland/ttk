@@ -36,7 +36,7 @@ class Standing extends React.Component {
     renderLink = () => (
         <SCLink onClick={this.onClick}>
             <SCLinkArrow>></SCLinkArrow>
-            {this.state.expanded ? 'SKJUL' : 'VIS'} TABELL FOR SERIERUNDE {this.props.gameWeek}
+            {this.state.expanded ? 'SKJUL' : 'VIS'} RIKTIG TABELL
         </SCLink>
     );
 
@@ -44,7 +44,7 @@ class Standing extends React.Component {
         <table>
             <tbody>
                 <tr>
-                    <SCTableHeader colSpan="3">SERIERUNDE {this.props.gameWeek}</SCTableHeader>
+                    <SCTableHeader colSpan="3">TABELL GAMEWEEK {this.props.gameWeek}</SCTableHeader>
                 </tr>
                 <tr>
                     <SCEmptyTd colSpan="3" />

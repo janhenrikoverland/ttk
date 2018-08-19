@@ -5,9 +5,9 @@ const headers = {
 
 const dc = () => new Date().getTime();
 
-const competitionUrl = 'http://api.football-data.org/v2/competitions/2021';
+const competitionUrl = 'https://api.football-data.org/v2/competitions/2021';
 
-const leagueTableUrl = 'http://api.football-data.org/v2/competitions/2021/standings?matchday=38';
+const leagueTableUrl = 'https://api.football-data.org/v2/competitions/2021/standings?matchday=38';
 
 export const getCompetition = async () => fetch(`${competitionUrl}?dc=${dc()}`, { headers });
 

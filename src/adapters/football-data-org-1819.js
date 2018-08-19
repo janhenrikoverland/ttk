@@ -34,11 +34,9 @@ export const getData = async api => {
     console.log('competition', competition);
     console.log('leagueTable', leagueTable);
 
-    const matchday = competition.currentSeason.currentMatchday;
-
     const data = {
         lastUpdated: formatDate(competition.lastUpdated),
-        gameWeek: competition.lastUpdated.substring(0, 10) < '2019-05-12' ? matchday - 1 : matchday,
+        gameWeek: competition.currentSeason.currentMatchday,
         standing: getStanding(leagueTable.standings[0].table),
     };
 

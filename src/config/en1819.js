@@ -1,6 +1,6 @@
 import api from '../api/football-data-org-1819';
 import adapter from '../adapters/football-data-org-1819';
-import { PAM, FEI, OEL, JHA, KLA, EMA, JOV, SOR } from './users';
+import { PAM, FEI, OEL, JHA, KLA, EMA, LWA, JOV, SOR } from './users';
 import {
     ARS,
     BOU,
@@ -32,7 +32,7 @@ const name = 'TTKE';
 const season = '1819';
 
 // Users
-const users = [PAM, FEI, OEL, JHA, KLA, EMA, JOV, SOR];
+const users = [PAM, FEI, OEL, JHA, KLA, EMA, LWA, JOV, SOR];
 
 // User colors
 const userColors = {
@@ -40,10 +40,11 @@ const userColors = {
     2: USER_COLORS.WINNER_SECOND,
     3: USER_COLORS.WINNER_THIRD,
     4: USER_COLORS.LOSER_FIRST,
-    5: USER_COLORS.LOSER_ALT8,
-    6: USER_COLORS.LOSER_ALT12,
-    7: USER_COLORS.LOSER_ALT16,
-    8: USER_COLORS.LOSER_LAST,
+    5: USER_COLORS.LOSER_ALT6,
+    6: USER_COLORS.LOSER_ALT10,
+    7: USER_COLORS.LOSER_ALT14,
+    8: USER_COLORS.LOSER_ALT17,
+    9: USER_COLORS.LOSER_LAST,
 };
 
 // Teams
@@ -244,6 +245,31 @@ const bets = [
             CAR,
             WAT,
             HUD,
+        ],
+    },
+    {
+        user: LWA,
+        table: [
+            MCI,
+            LIV,
+            TOT,
+            MUN,
+            ARS,
+            CHE,
+            EVE,
+            WHU,
+            SOU,
+            LEI,
+            BRN,
+            WOL,
+            CRY,
+            BOU,
+            NEW,
+            BHA,
+            FUL,
+            WAT,
+            HUD,
+            CAR,
         ],
     },
     {

@@ -3,10 +3,10 @@ import { numberDifference } from './number';
 // returns { ARS: { ...team }}
 export const getIdTeamMap = standing =>
     standing.reduce(
-        (map, team, index) => ({
-            ...map,
-            [team.id]: { ...team, position: index + 1 },
-        }),
+        (map, team, index) => {
+            map[team.id] = { ...team, position: index + 1 };
+            return map;
+        },
         {}
     );
 
@@ -16,7 +16,6 @@ export const getTableWithPosition = table =>
 export const getResults = (config, standing) => {
     const bets = config.bets;
     const legend = config.team.legend;
-
     const standingById = getIdTeamMap(standing);
 
     return bets.map(bet => {

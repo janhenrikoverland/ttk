@@ -3,6 +3,11 @@ export const ARS = {
     name: 'Arsenal',
 };
 
+export const AVL = {
+    id: 'AVL',
+    name: 'Aston Villa',
+};
+
 export const BOU = {
     id: 'BOU',
     name: 'Bournemouth',
@@ -73,6 +78,16 @@ export const NEW = {
     name: 'Newcastle',
 };
 
+export const NOR = {
+    id: 'NOR',
+    name: 'Norwich',
+};
+
+export const SHU = {
+    id: 'SHU',
+    name: 'Sheffield United',
+};
+
 export const SOU = {
     id: 'SOU',
     name: 'Southampton',
@@ -115,6 +130,7 @@ export const WOL = {
 
 export default {
     ARS,
+    AVL,
     BOU,
     BHA,
     BRN,
@@ -129,6 +145,8 @@ export default {
     MCI,
     MUN,
     NEW,
+    NOR,
+    SHU,
     SOU,
     STK,
     SWA,

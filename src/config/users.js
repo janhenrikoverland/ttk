@@ -20,7 +20,7 @@ export const OEL = {
 
 export const LPA = {
     id: 'LPA',
-    name: 'Fauske-Palmér',
+    name: 'Palmér',
 };
 
 export const JHA = {

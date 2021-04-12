@@ -53,6 +53,11 @@ export const HUD = {
     name: 'Huddersfield',
 };
 
+export const LEE = {
+    id: 'LEE',
+    name: 'Leeds',
+};
+
 export const LEI = {
     id: 'LEI',
     name: 'Leicester',
@@ -140,6 +145,7 @@ export default {
     EVE,
     FUL,
     HUD,
+    LEE,
     LEI,
     LIV,
     MCI,

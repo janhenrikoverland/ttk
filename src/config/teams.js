@@ -18,6 +18,11 @@ export const BHA = {
     name: 'Brighton',
 };
 
+export const BRE = {
+    id: 'BRE',
+    name: 'Brentford',
+};
+
 export const BRN = {
     id: 'BRN',
     name: 'Burnley',
@@ -138,6 +143,7 @@ export default {
     AVL,
     BOU,
     BHA,
+    BRE,
     BRN,
     CAR,
     CHE,

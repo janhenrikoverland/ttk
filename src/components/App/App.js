@@ -44,7 +44,7 @@ class AppCt extends Component {
         const { getData } = adapter;
 
         const { lastUpdated, gameWeek, standing } = await getData(api);
-
+        console.log(lastUpdated, gameWeek, standing);
         const results = getSortedResults(getResults(config, standing), config.user.colors);
 
         this.setState({
